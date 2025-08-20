@@ -1,29 +1,30 @@
-# Adult Income Prediction using XGBoost
+# Breast Cancer Detection using XGBoost
 
-This project predicts whether an individual's income exceeds $50K/year based on demographic and employment attributes. The dataset is the [UCI Adult Income Dataset](https://archive.ics.uci.edu/ml/datasets/adult).
+This project uses the **Breast Cancer Wisconsin dataset** from `sklearn.datasets` to build a machine learning model that classifies tumors as **malignant** or **benign**.
 
 ## 📊 Dataset
-- Source: UCI Machine Learning Repository  
-- Features: 14 (age, education, occupation, marital status, hours-per-week, etc.)  
-- Target: Income (`<=50K` or `>50K`)  
+- Source: `from sklearn.datasets import load_breast_cancer`
+- Samples: 569
+- Features: 30 numeric features (mean, standard error, and worst values of cell nuclei characteristics)
+- Target:  
+  - `0` → Malignant  
+  - `1` → Benign  
 
 ## 🛠️ Tech Stack
 - Python
-- Pandas, NumPy (data processing)
-- Scikit-learn (preprocessing, evaluation metrics)
+- Pandas, NumPy (data handling)
+- Scikit-learn (train/test split, metrics)
 - XGBoost (model training)
-- Matplotlib/Seaborn (visualization)
+- Matplotlib/Seaborn (optional visualizations)
 
 ## ⚙️ Steps
-1. Load dataset (`adult.data`, `adult.test`)
-2. Clean missing values (`?` entries)
-3. Encode categorical features
-4. Train-test split
-5. Train **XGBoostClassifier**
-6. Evaluate with accuracy, confusion matrix, and classification report
+1. Load dataset with `load_breast_cancer()`
+2. Train-test split
+3. Train **XGBoostClassifier**
+4. Evaluate with accuracy, confusion matrix, and classification report
 
 ## 📈 Results
-- **Accuracy:** ~96%
+- **Accuracy:** ~96%  
 - **Confusion Matrix:**  
 [[41, 2],
 [ 2, 69]]
@@ -31,20 +32,20 @@ This project predicts whether an individual's income exceeds $50K/year based on 
 - **Classification Report:**
 | Class | Precision | Recall | F1-score |
 |-------|-----------|--------|----------|
-| <=50K | 0.95      | 0.95   | 0.95     |
-| >50K  | 0.97      | 0.97   | 0.97     |
+| 0 (Malignant) | 0.95 | 0.95 | 0.95 |
+| 1 (Benign)    | 0.97 | 0.97 | 0.97 |
 
 ## 🚀 How to Run
 ```bash
 # Clone the repository
-git clone https://github.com/ishanegi5/adult-income-prediction-xgboost.git
-cd adult-income-prediction-xgboost
+git clone https://github.com/ishanegi5/breast-cancer-detection-xgboost.git
+cd breast-cancer-detection-xgboost
 
 # Install dependencies
 pip install -r requirements.txt
 
 # Run the notebook or script
-jupyter notebook Adult_Income_XGBoost.ipynb
+jupyter notebook Breast_Cancer_XGBoost.ipynb
 
 📌 Requirements
 pandas
@@ -58,5 +59,4 @@ seaborn
 
 This project is open-source and available under the MIT License.
 
-Author:
-Isha Negi
+🔗 Author: Isha Negi
